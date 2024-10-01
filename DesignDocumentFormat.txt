@@ -12,7 +12,7 @@ LinearEquation class:
 		private int y1 // First y coordinate
 		private int y2 // Second y coordinate
 		private double slopeValue // Slope
-		Private double slopeString // For eqaution
+		private double slopeString // For eqaution
 		private double yIntercept // y-intercept
 		private String equation // string of equation 
 		private double distanceBetweenPoints // distance
