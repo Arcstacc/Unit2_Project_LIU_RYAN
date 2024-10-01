@@ -28,7 +28,7 @@ slopeString = (changeInY) + "/" + (changeInX);
 yIntercept = y1 - (slopeValue * x1);
 
 // y = mx + b
-equation = "y = " + slopeString + " + " + yIntercept;
+equation = "y = " + slopeString + "x + " + yIntercept;
     
 // Find distance with methods from math class
 distanceBetweenPoints = Math.sqrt(Math.pow(changeInX, 2) + Math.pow(changeInY, 2));
@@ -40,7 +40,8 @@ distanceBetweenPoints = Math.sqrt(Math.pow(changeInX, 2) + Math.pow(changeInY, 2
         System.out.println("Slope of line: " + dc1.format(slopeValue));
         System.out.println("Y-intercept: " + dc1.format(yIntercept));
         System.out.println("Slope intercept form: " + equation);
-        System.out.println("Distance between points: " + distanceBetweenPoints);
+        System.out.println("Distance between points: " + dc1.format(distanceBetweenPoints));
+        return "0"; // temp return value
     }
 
     public String solveWithThirdCoordinate(int x) {

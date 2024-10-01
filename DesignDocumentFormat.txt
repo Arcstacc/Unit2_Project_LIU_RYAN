@@ -60,11 +60,11 @@ EquationRunner.java:
 	Step 1: Ask user to enter first coordinate point (Store in variable w. scanner)
 	Step 2: Ask user to enter second coordinate point (Store in variable w. scanner)
     Step 3: Find the index of both ‘,’ using indexOf() method, Classified as commaIndex1 and commaIndex2.
-	Step 4: X1 is substring from (0, commaIndex1), Y1 is substring from (commaIndex1 + 1, (length - 1)). The length is the length of the string.
+	Step 4: X1 is substring from (1, commaIndex1), Y1 is substring from (commaIndex1 + 1, (length - 1)). The length is the length of the string.
     Step 4.5: Get substring of the value, then use parseInt to convert substring into integer coordinate.
 	Step 5: Repeat step 4 for X2 and Y2
 	Step 6: Construct linear equation object with the information on coordinates
 	Step 7: Call toString() to output information
-	Step 8: Ask for a third x-value to solve on the linear equation
+	Step 8: Ask for a third x-value to solve on the linear equation (Again, use scanner)
 	Step 9: print out the solution by calling solveWithThirdCoordinate(x) with the third x value to get the return value
 	Step 10: We done :D
