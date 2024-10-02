@@ -31,10 +31,7 @@ LinearEquation class:
 			- b = y - mx
 			- yIntercept = y1 - (slope * x1)
 
-        // Use the methods to find nice slopes and nice yintercept for equation
 		Equation is y = mx + b
-
-
 
 	// Using methods from the math class
 		Distance between two points 
@@ -44,64 +41,17 @@ LinearEquation class:
 	Methods
 	
 		public String toString()
-		This method will return all relevant information about this instance including:
+		This method will display all relevant information about this instance including:
 		X and Y coordinate information
 		Pairs (Casting to doubles)
 		Slope, y-intercept, and Slope Intercept Form equation
 		Distance b/t points.
+        Use sout() to display info
 
 		public String solveWithThirdCoordinate(int x)
 		This method will take in a third x coordinate and 
 		use it to solve for the y value based on the linear equation (Incluidng slope and y-intercept info)
 		Return a string of the information in (x,y) form
-
-	    public String createNiceSlope(x, y)
-	    This method will take in coordinates and return nice fractions
-	    for (int gcf = 0; i < abs(changeInX) && i < abs(changeInY), gcf++) {
-	    int returnedNumerator = changeInY
-	    int returnedDenominator = changeInX
-
-        // Simplification
-	    if gcf = abs(changeInX)
-	    // Then divide them to get whole number
-	    }
-	    else
-	        changeInX / gcf
-	        changeInY / gcf
-
-	    // Negatives
-	    if changeInX < 0 {
-	    changeInX and changeInY multiplied by -1
-	    }
-
-	    // Return
-	    if changeInY = 1 && changeInX = 1
-	    return nothing
-	    else if changeInY = -1 && changeInX = 1
-	    return -
-	    else return "" + changeInY + "/" + changeInX
-
-	    public string niceYIntercept() {
-	    if yIntercept.equals(0)
-	    return nothing
-	    if yIntercept < 0:
-	    return negative value
-
-	    public string equation()
-	    using slope and yintercept
-	    if slope == 0 && yintercept == 0
-	    return equation with y = 0
-	    if slope == 0
-	    return equation with y = y intercept
-	    if yintercept == 0
-	    return equation with y = slope
-
-
-	    }
-
-
-
-
 
 EquationRunner.java:
 

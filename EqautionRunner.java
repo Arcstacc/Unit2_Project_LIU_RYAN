@@ -24,7 +24,8 @@ public class EqautionRunner {
         int y2 = Integer.parseInt(y2String);
 
         LinearEqaution line = new LinearEqaution(x1, y1, x2, y2);
-        line.toString(); 
+        String informationAboutLine = line.toString();
+        System.out.println(informationAboutLine);
         // Ask if toString is sout or return value?
 
     System.out.print("Enter a third x-value: ");
