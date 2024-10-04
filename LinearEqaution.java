@@ -4,6 +4,7 @@ public class LinearEqaution {
     // Create a bunch of variables
     // Decimal format for formatting
     DecimalFormat dc1 = new DecimalFormat("#.00");
+    DecimalFormat dc2 = new DecimalFormat("#");
     private int x1; // First x coordinate
     private int x2; // Second x coordinate
     private int y1; // First y coordinate
@@ -30,7 +31,7 @@ slopeString = (changeInY) + "/" + (changeInX);
 yIntercept = y1 - (slopeValue * x1);
 
 // y = mx + b
-equation = "y = " + slopeString + "x + " + yIntercept;
+equation = equation();
 
 // Find distance with methods from math class
 distanceBetweenPoints = Math.sqrt(Math.pow(changeInX, 2) + Math.pow(changeInY, 2));
@@ -54,50 +55,57 @@ String thirdCoordPoint = "(" + thirdCoordX + "," + thirdCoordY + ")";
 return thirdCoordPoint;
     }
 
-    public String createNiceSlope(int x, int y) {
-        // This method will take in coordinates and return nice fractions
-        int returnedNumerator = changeInY;
-        int returnedDenominator = changeInX;
-        for (int gcf = 0; gcf < Math.abs(returnedDenominator) && gcf < Math.abs(returnedNumerator); gcf++) {
-            // Simplification
-            if gcf == Math.abs(returnedDenominator);
-            // Then divide them to get whole number
+public String niceSlope() {
+	    // This method will return nice fractions
+		int numerator = changeInY;
+	    int denominator = changeInX;
+        int gcf = 1;
+        // Find gcf
+        for (int i = 1; Math.min(Math.abs(denominator), Math.abs(numerator)) > i; i++) {
+            if (numerator % i == 0 && denominator % i == 0) {
+                gcf = i;
+                System.out.println(gcf);
+            }
         }
-	    else
-        changeInX / gcf;
-        changeInY / gcf;
-
         // Negatives
-        if changeInX < 0 {
-            changeInX and changeInY multiplied by - 1
+        if (denominator < 0) {
+            numerator *= -1;
+            denominator *= -1;
         }
-
-        // Return
-        if changeInY = 1 && changeInX = 1
-        return nothing
-	    else if changeInY = -1 && changeInX = 1
-        return -
-            else return "" + changeInY + "/" + changeInX
+        // Return wholes 
+	    if (gcf == Math.abs(changeInX)) {
+            return dc2.format((double) numerator / denominator) + "x ";
+            }
+			
+	    // fractions
+        else {
+            return dc2.format((double) changeInY / gcf) + "/" + dc2.format((double) changeInX / gcf) + "x ";
+        }
     }
 
-    public string niceYIntercept() {
-        if yIntercept.equals(0)
-        return nothing
-        if yIntercept < 0:
-        return negative value
+public String niceYIntercept() {
+        // This method will return a nice y-intercept
 
-        public string equation()
-        using slope and yintercept
-        if slope == 0 && yintercept == 0
-        return equation with y = 0
-        if slope == 0
-        return equation with y = y intercept
-        if yintercept == 0
-        return equation with y = slope
+        if (yIntercept < 0) {
+            return "- " + yIntercept;
+        }
+        else {
+            return "+ " + yIntercept;
+        }
+}
 
-
+public String equation() {
+    if (slopeValue == 0 && yIntercept == 0) {
+        return "y = 0";
     }
-
-
-
+    if (slopeValue == 0) {
+        return "y = " + yIntercept;
+    }
+    if (yIntercept == 0) {
+        return "y = " + niceSlope();
+    }
+    else {
+        return "y = " + niceSlope() + niceYIntercept();
+    }
+}
 }

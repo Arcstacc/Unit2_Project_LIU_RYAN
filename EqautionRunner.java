@@ -34,10 +34,5 @@ public class EqautionRunner {
     String solvedThirdCoord = line.solveWithThirdCoordinate(x3);
     System.out.println(solvedThirdCoord);
     
-
-
-	// Step 8: Ask for a third x-value to solve on the linear equation (Again, use scanner)
-	// Step 9: print out the solution by calling solveWithThirdCoordinate(x) with the third x value to get the return value
-	// Step 10: We done :D
     }
 }

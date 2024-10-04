@@ -24,7 +24,6 @@ LinearEquation class:
 
 	// Calculations
 		Do calculation for slope (y2 - y1) / (x2 - x1)
-        // String for fraction, Double for calculations
 
 		Find y intercept by
 			- y = mx + b
@@ -43,61 +42,48 @@ LinearEquation class:
 
 	Methods
 	
-		public String toString()
+public String toString()
 		This method will return all relevant information about this instance including:
 		X and Y coordinate information
 		Pairs (Casting to doubles)
 		Slope, y-intercept, and Slope Intercept Form equation
 		Distance b/t points.
 
-		public String solveWithThirdCoordinate(int x)
+public String solveWithThirdCoordinate(int x)
 		This method will take in a third x coordinate and 
 		use it to solve for the y value based on the linear equation (Incluidng slope and y-intercept info)
 		Return a string of the information in (x,y) form
 
-	    public String createNiceSlope(x, y)
-	    This method will take in coordinates and return nice fractions
-	    for (int gcf = 0; i < abs(changeInX) && i < abs(changeInY), gcf++) {
-	    int returnedNumerator = changeInY
-	    int returnedDenominator = changeInX
+public String niceSlope()
+	    This method will return nice fractions
+		Variables: 
+		int Numerator = changeInY
+	    int Denominator = changeInX
+		gcf = 1
 
-        // Simplification
-	    if gcf = abs(changeInX)
-	    // Then divide them to get whole number
-	    }
-	    else
-	        changeInX / gcf
-	        changeInY / gcf
+		Step1: Find greatest common factor
+	    	for (int i = 1; Math.min(Math.abs(denominator), Math.abs(numerator)) > i; i++)
+			find gcf 
+		Step 2: Negatives
+			if denominator is negative, multiply both num and denom by -1
+		Step 3: Return any possible whole numbers
+	    	if gcf = abs(changeInX)
+			return whole number + "x "
+	    Step 4: Return fractions
+	        return changeInY / gcf + changeInX / gcf + "x "
 
-	    // Negatives
-	    if changeInX < 0 {
-	    changeInX and changeInY multiplied by -1
-	    }
+public string niceYIntercept() 
+		step 1: If yIntercept is negative, return "- " + yIntercept 
+		step 2: else Return "+ " + yIntercept
 
-	    // Return
-	    if changeInY = 1 && changeInX = 1
-	    return nothing
-	    else if changeInY = -1 && changeInX = 1
-	    return -
-	    else return "" + changeInY + "/" + changeInX
+public string equation()
+		step 1: If slope is 0 and yIntercept is 0, return "y = 0"
+		step 2: If slope is 0, return "y = " + yIntercept
+		step 3: If yIntercept is 0, return "y = " + niceSlope()
+		step 4: Else Return "y = " + slope + "x + " + niceYIntercept()
 
-	    public string niceYIntercept() {
-	    if yIntercept.equals(0)
-	    return nothing
-	    if yIntercept < 0:
-	    return negative value
+	    
 
-	    public string equation()
-	    using slope and yintercept
-	    if slope == 0 && yintercept == 0
-	    return equation with y = 0
-	    if slope == 0
-	    return equation with y = y intercept
-	    if yintercept == 0
-	    return equation with y = slope
-
-
-	    }
 
 
 
@@ -118,3 +104,7 @@ EquationRunner.java:
 	Step 8: Ask for a third x-value to solve on the linear equation (Again, use scanner)
 	Step 9: print out the solution by calling solveWithThirdCoordinate(x) with the third x value to get the return value
 	Step 10: We done :D
+
+
+	
+
