@@ -5,6 +5,8 @@ public class LinearEqaution {
     // Decimal format for formatting
     DecimalFormat dc1 = new DecimalFormat("0.00");
     DecimalFormat dc2 = new DecimalFormat("#");
+
+    // Init variables
     private int x1; // First x coordinate
     private int x2; // Second x coordinate
     private int y1; // First y coordinate
@@ -26,17 +28,20 @@ this.y2 = y2;
 changeInX = x2 - x1;
 changeInY = y2 - y1;
 
+// Do early calculations for slope, y intercept
 slopeValue = (double) (changeInY) / (double) (changeInX);
-slopeString = (changeInY) + "/" + (changeInX);
 yIntercept = y1 - (slopeValue * x1);
 
+// Use equation method below to compile a simplified equation
 // y = mx + b
 equation = equation();
 
 // Find distance with methods from math class
+// d = √((x2 - x1)² + (y2 - y1)²)
 distanceBetweenPoints = Math.sqrt(Math.pow(changeInX, 2) + Math.pow(changeInY, 2));
     }
 
+    // To string returns the information of the LinearEquation class
     public String toString() {
         String returnedFirstPoint = "First point: (" + x1 + ", " + y1 + ")";
         String returnedSecondPoint = "\nSecond point: (" + x2 + ", " + y2 + ")";
@@ -47,7 +52,7 @@ distanceBetweenPoints = Math.sqrt(Math.pow(changeInX, 2) + Math.pow(changeInY, 2
         return returnedFirstPoint + returnedSecondPoint + returnedSlope + returnedYIntercept + returnedEquation + returnedDistanceBetweenPoints;
     }
 
-
+// Solve third coordinate utilizes slope, yintercept, and a 3rd x coordinate to solve the 3rd coordinates's y value
     public String solveWithThirdCoordinate(int x) {
 double thirdCoordX = x;
 double thirdCoordY = (slopeValue * x) + yIntercept;
@@ -60,40 +65,55 @@ public String niceSlope() {
 		int numerator = changeInY;
 	    int denominator = changeInX;
         int gcf = 1;
-        // Find gcf
+
+        // Find gcf by checking all common factors up to the minimum value between the denominator and numnerator
         for (int i = 1; Math.min(Math.abs(denominator), Math.abs(numerator)) >= i; i++) {
             if (numerator % i == 0 && denominator % i == 0) {
                 gcf = i;
             }
         }
-        // Negatives
+
+        // Negatives for proper formatting and simplification
         if (denominator < 0) {
             numerator *= -1;
             denominator *= -1;
         }
-        // Return wholes 
+
+        // Return proper x, or -x instead of 1x or -1x
+        if (slopeValue == 1) {
+        return "x ";
+        }
+        else if (slopeValue == -1){
+        return "-x ";
+        }
+
+        // Return wholes, if the denominator is also a common factor
 	    if (gcf == Math.abs(changeInX)) {
             return dc2.format((double) numerator / denominator) + "x ";
             }
 			
-	    // fractions
+	    // fractions, for all other slopes
         else {
-            return dc2.format((double) changeInY / gcf) + "/" + dc2.format((double) changeInX / gcf) + "x ";
+            return dc2.format((double) numerator / gcf) + "/" + dc2.format((double) denominator / gcf) + "x ";
         }
     }
 
 public String niceYIntercept() {
         // This method will return a nice y-intercept
-
+        // Appends a minus sign if negative
         if (yIntercept < 0) {
             return "- " + dc1.format(Math.abs(yIntercept));
         }
+        // Appends a plus sign if positive
         else {
             return "+ " + dc1.format(yIntercept);
         }
 }
 
+
 public String equation() {
+        // Utlizes both niceSlope and niceYIntercept to create an equation to be outputted
+    // many conditions for proper formatting of the eqaution
     if (slopeValue == 0 && yIntercept == 0) {
         return "y = 0";
     }
