@@ -3,7 +3,7 @@ import java.lang.Math;
 public class LinearEqaution {
     // Create a bunch of variables
     // Decimal format for formatting
-    DecimalFormat dc1 = new DecimalFormat("#.00");
+    DecimalFormat dc1 = new DecimalFormat("0.00");
     DecimalFormat dc2 = new DecimalFormat("#");
     private int x1; // First x coordinate
     private int x2; // Second x coordinate
@@ -51,7 +51,7 @@ distanceBetweenPoints = Math.sqrt(Math.pow(changeInX, 2) + Math.pow(changeInY, 2
     public String solveWithThirdCoordinate(int x) {
 double thirdCoordX = x;
 double thirdCoordY = (slopeValue * x) + yIntercept;
-String thirdCoordPoint = "(" + thirdCoordX + "," + thirdCoordY + ")";
+String thirdCoordPoint = "Solved coordinate point is: (" + dc1.format(thirdCoordX) + "," + dc1.format(thirdCoordY) + ")";
 return thirdCoordPoint;
     }
 
@@ -64,7 +64,6 @@ public String niceSlope() {
         for (int i = 1; Math.min(Math.abs(denominator), Math.abs(numerator)) >= i; i++) {
             if (numerator % i == 0 && denominator % i == 0) {
                 gcf = i;
-                System.out.println("Line" + gcf);
             }
         }
         // Negatives
@@ -87,10 +86,10 @@ public String niceYIntercept() {
         // This method will return a nice y-intercept
 
         if (yIntercept < 0) {
-            return "- " + Math.abs(yIntercept);
+            return "- " + dc1.format(Math.abs(yIntercept));
         }
         else {
-            return "+ " + yIntercept;
+            return "+ " + dc1.format(yIntercept);
         }
 }
 

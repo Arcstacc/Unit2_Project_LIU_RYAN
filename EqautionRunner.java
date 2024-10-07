@@ -4,6 +4,9 @@ public class EqautionRunner {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.println("WELCOME TO THE LINEAR EQAUTION FINDER");
+        System.out.println("-------------------------------------");
+        System.out.println("   Please enter in '(#,#)' format");
+        System.out.println("-------------------------------------");
         
         System.out.print("Enter your first Coordinate Point: ");
         String firstPoint = s.nextLine();
@@ -26,7 +29,6 @@ public class EqautionRunner {
         LinearEqaution line = new LinearEqaution(x1, y1, x2, y2);
         String informationAboutLine = line.toString();
         System.out.println(informationAboutLine);
-        // Ask if toString is sout or return value?
 
     System.out.print("Enter a third x-value: ");
     String x3String = s.nextLine();
