@@ -61,10 +61,10 @@ public String niceSlope() {
 	    int denominator = changeInX;
         int gcf = 1;
         // Find gcf
-        for (int i = 1; Math.min(Math.abs(denominator), Math.abs(numerator)) > i; i++) {
+        for (int i = 1; Math.min(Math.abs(denominator), Math.abs(numerator)) >= i; i++) {
             if (numerator % i == 0 && denominator % i == 0) {
                 gcf = i;
-                System.out.println(gcf);
+                System.out.println("Line" + gcf);
             }
         }
         // Negatives
@@ -87,7 +87,7 @@ public String niceYIntercept() {
         // This method will return a nice y-intercept
 
         if (yIntercept < 0) {
-            return "- " + yIntercept;
+            return "- " + Math.abs(yIntercept);
         }
         else {
             return "+ " + yIntercept;
