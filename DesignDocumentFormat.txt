@@ -62,14 +62,15 @@ public String niceSlope()
 		gcf = 1
 
 		Step1: Find greatest common factor
-	    	for (int i = 1; Math.min(Math.abs(denominator), Math.abs(numerator)) > i; i++)
+	    	for (int i = 1; Math.min(Math.abs(denominator), Math.abs(numerator)) >= i; i++)
 			find gcf 
 		Step 2: Negatives
 			if denominator is negative, multiply both num and denom by -1
-		Step 3: Return any possible whole numbers
+		Step 3: Return x for slope = 1 and return -x for slope = -1
+		Step 4: Return any possible whole numbers
 	    	if gcf = abs(changeInX)
 			return whole number + "x "
-	    Step 4: Return fractions
+	    Step 5: Return fractions
 	        return changeInY / gcf + changeInX / gcf + "x "
 
 public string niceYIntercept() 
