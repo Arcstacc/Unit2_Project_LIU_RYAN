@@ -53,7 +53,7 @@ distanceBetweenPoints = Math.sqrt(Math.pow(changeInX, 2) + Math.pow(changeInY, 2
     }
 
 // Solve third coordinate utilizes slope, yintercept, and a 3rd x coordinate to solve the 3rd coordinates's y value
-    public String solveWithThirdCoordinate(int x) {
+    public String solveWithThirdCoordinate(double x) {
 double thirdCoordX = x;
 double thirdCoordY = (slopeValue * x) + yIntercept;
 String thirdCoordPoint = "Solved coordinate point is: (" + dc1.format(thirdCoordX) + "," + dc1.format(thirdCoordY) + ")";

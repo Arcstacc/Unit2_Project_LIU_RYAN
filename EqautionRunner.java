@@ -43,7 +43,7 @@ public class EqautionRunner {
     // Ask for a third x value on the line
     System.out.print("Enter a third x-value: ");
     String x3String = s.nextLine();
-    int x3 = Integer.parseInt(x3String);
+    double x3 = Double.parseDouble(x3String);
 
     // Get the solved y coordinate with the third x value and print out
     String solvedThirdCoord = line.solveWithThirdCoordinate(x3);
