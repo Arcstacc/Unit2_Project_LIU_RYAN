@@ -49,7 +49,7 @@ public String toString()
 		Slope, y-intercept, and Slope Intercept Form equation
 		Distance b/t points.
 
-public String solveWithThirdCoordinate(int x)
+public String solveWithThirdCoordinate(double x)
 		This method will take in a third x coordinate and 
 		use it to solve for the y value based on the linear equation (Incluidng slope and y-intercept info)
 		Return a string of the information in (x,y) form
